@@ -1,4 +1,7 @@
 @Library('test-pipeline-library') _
 import com.example.*
 
-new Pipeline(this, "config.yml").execute()
+def pipeline = new Pipeline(this, "config.yml")
+node {
+    pipeline.execute()
+}
