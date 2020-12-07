@@ -20,8 +20,8 @@ node {
             pipeline.codeTest()
         }
     } catch (err){
-        echo "Pipeline Error"
         currentBuild.result = "FAILED"
+        throw err
     }
     // } finally {
     //     pipeline.notifyBuild()
