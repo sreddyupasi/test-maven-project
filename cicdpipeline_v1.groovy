@@ -22,7 +22,8 @@ node {
     } catch (err){
         echo "Pipeline Error"
         currentBuild.result = "FAILED"
-    } finally {
-        pipeline.notifyBuild()
     }
+    // } finally {
+    //     pipeline.notifyBuild()
+    // }
 }
