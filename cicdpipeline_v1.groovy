@@ -23,6 +23,6 @@ node {
         echo "Pipeline Error"
         currentBuild.result = "FAILED"
     } finally {
-        pipeline.notifyBuild
+        pipeline.notifyBuild()
     }
 }
