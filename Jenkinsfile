@@ -5,7 +5,7 @@ def pipeline = new Pipeline(this, "config.yml")
 node {
     try {
         stage ('prerequisites'){
-        pipeline.execute()
+            pipeline.execute()
         }
         stage('build'){
             pipeline.codeBuild()
@@ -20,9 +20,10 @@ node {
             pipeline.codeTest()
         }
     } catch (err){
-        echo "Pipeline Error"
         currentBuild.result = "FAILED"
+        throw err
+    }
     } finally {
-        pipeline.notifyBuild
+        pipeline.notifyBuild()
     }
 }
