@@ -23,7 +23,7 @@ node {
         currentBuild.result = "FAILED"
         throw err
     }
-    } finally {
+     finally {
         pipeline.notifyBuild()
     }
 }
