@@ -24,6 +24,6 @@ node {
         throw err
     }
      finally {
-        pipeline.notifyBuild()
+        // pipeline.notifyBuild()
     }
 }
